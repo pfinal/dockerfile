@@ -44,8 +44,20 @@ RUN apk update && apk add "php7<7.3" \
     echo; \
     echo '; Ensure worker stdout and stderr are sent to the main error log.'; \
     echo 'catch_workers_output = yes'; \
-} | tee php-fpm.d/docker.conf
+} | tee php-fpm.d/docker.conf \
+&& { \
+        echo '[global]'; \
+        echo 'daemonize = no'; \
+        echo; \
+        echo '[www]'; \
+        echo '; default 127.0.0.1 only' \
+        echo; \
+        echo 'listen = 9000'; \
+    } | tee php-fpm.d/zz-docker.conf
 
 EXPOSE 9000
 
-CMD ["php-fpm", "--nodaemonize"]
+# CMD ["php-fpm", "--nodaemonize"]
+CMD ["php-fpm"]
+
+
