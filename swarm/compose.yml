@@ -1,0 +1,41 @@
+version: '3.4'
+services:
+
+  mysql:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_ROOT_PASSWORD: 'abc123'  # root用户的密码
+
+      MYSQL_DATABASE: demo
+
+      MYSQL_USER: demo
+      MYSQL_PASSWORD: 'def456'
+
+    deploy:
+      restart_policy:
+        condition: on-failure
+      replicas: 1
+
+  php:
+    image: myphp:1.0 # 项目业务代码镜像
+    deploy:
+      restart_policy:
+        condition: on-failure
+      replicas: 3
+
+  nginx:
+    image: mynginx:1.0  # 修改了配置文件的nginx镜像
+    ports:
+      - 8081:80
+
+    deploy:
+      restart_policy:
+        condition: on-failure
+      replicas: 2
+
+  adminer:
+    image: adminer
+    ports:
+        - 8080:8080

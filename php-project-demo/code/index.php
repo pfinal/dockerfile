@@ -7,6 +7,13 @@
 <body>
 <?php
 
+
+$f = fopen("/proc/self/cgroup", "r");
+$str = fgets($f);
+$index = strrpos($str, '/');
+$containerId = substr($str, $index + 1);
+
+
 switch ($_SERVER['PATH_INFO']) {
     case '/phpinfo':
         phpinfo();
@@ -14,6 +21,7 @@ switch ($_SERVER['PATH_INFO']) {
     case '/':
         date_default_timezone_set('PRC');
         echo '<h1>Hello PHP!</h1><a href="/phpinfo">phpinfo</a><br><br>';
+        echo $containerId . '<br>';
         echo $_SERVER['SERVER_ADDR'] . '<br>';
         echo date("Y-m-d H:i:s") . '<br>';
         break;

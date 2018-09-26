@@ -1,0 +1,5 @@
+{
+    "require": {
+        "pfinal/database": "^1.9"
+    }
+}

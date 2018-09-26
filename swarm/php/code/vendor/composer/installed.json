@@ -1,0 +1,44 @@
+[
+    {
+        "name": "pfinal/database",
+        "version": "v1.9.6",
+        "version_normalized": "1.9.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/pfinal/database.git",
+            "reference": "8ffe266f26178b9585f88805f55116dc184094ee"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/pfinal/database/zipball/8ffe266f26178b9585f88805f55116dc184094ee",
+            "reference": "8ffe266f26178b9585f88805f55116dc184094ee",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^5.0",
+            "symfony/var-dumper": "*"
+        },
+        "time": "2018-09-11T09:30:04+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PFinal\\Database\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Zou Yiliang"
+            }
+        ],
+        "description": "PHP MySQL database wrapper, extends PDO and PDOStatement",
+        "homepage": "http://www.pfinal.cn"
+    }
+]
