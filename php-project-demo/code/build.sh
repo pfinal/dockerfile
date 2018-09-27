@@ -1,1 +1,0 @@
-docker build -t myphp:1.0 .
