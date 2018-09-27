@@ -19,14 +19,14 @@ services:
       replicas: 1
 
   php:
-    image: myphp:1.0 # 项目业务代码镜像
+    image: 172.19.80.62:5000/myphp:1.0    # 按实际情况修改私有仓库地址
     deploy:
       restart_policy:
         condition: on-failure
       replicas: 3
 
   nginx:
-    image: mynginx:1.0  # 修改了配置文件的nginx镜像
+    image: 172.19.80.62:5000/mynginx:1.0  # 按实际情况修改私有仓库地址
     ports:
       - 8081:80
 

@@ -16,11 +16,40 @@ docker build -t myphp:1.0 .
 cd ..
 ```
 
+
+## 将镜像push到私有仓库
+
+```
+# 请替换 172.19.80.62:5000 为你实际的私有仓库地址
+docker login 172.19.80.62:5000
+
+docker tag myphp:1.0 172.19.80.62:5000/myphp:1.0
+docker push 172.19.80.62:5000/myphp
+
+docker tag mynginx:1.0 172.19.80.62:5000/mynginx:1.0
+docker push 172.19.80.62:5000/mynginx
+
+# 修改 compose.yml中的私有仓库地址为你真实的地址
+```
+
+## 所有的节点都需要配置私有仓库地址，否则login不成功，无法下载镜像
+
+```
+vi /etc/docker/daemon.json 
+{ "insecure-registries":["172.19.80.62:5000"] }
+
+service docker restart
+```
+
+
 ## 部署服务 (服务名叫demo)
 
 ```
 docker stack deploy -c compose.yml --with-registry-auth demo
 docker service ls
+docker service ps demo_nginx
+docker service ps demo_php
+docker service logs demo_mysql
 ```
 
 浏览器访问8080端口
