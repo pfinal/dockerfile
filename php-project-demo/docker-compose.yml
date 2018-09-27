@@ -2,9 +2,9 @@ version: '3.4'
 services:
 
   php:
-    build: .
-    ports:
-      - 9000:9000
+    image: 190196539/php:7.2-fpm-alpine
+    #ports:
+    #  - 9000:9000
     volumes:
       - $PWD/code:/www/code/
 
@@ -15,5 +15,5 @@ services:
       - $PWD/nginx.conf:/etc/nginx/conf.d/default.conf
     ports:
       - 8080:80
-    links:
-      - php
+    #links:
+    #  - php
