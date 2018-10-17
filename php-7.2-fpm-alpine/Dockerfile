@@ -1,3 +1,5 @@
+# docker build -t pfinal/php:7.2-fpm-alpine . && docker push pfinal/php:7.2-fpm-alpine
+
 FROM alpine:3.8
 
 LABEL Author="ZouYiliang"
