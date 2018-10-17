@@ -2,7 +2,7 @@ version: '3.4'
 services:
 
   php:
-    image: 190196539/php:7.2-fpm-alpine
+    image: pfinal/php:7.2-fpm-alpine
     #ports:
     #  - 9000:9000
     volumes:

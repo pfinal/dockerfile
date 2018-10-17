@@ -1,4 +1,4 @@
-# docker build -t 190196539/php:7.0-fpm-ubuntu .
+# docker build -t pfinal/php:7.0-fpm-ubuntu . && docker push pfinal/php:7.0-fpm-ubuntu
 
 FROM ubuntu:16.04
 

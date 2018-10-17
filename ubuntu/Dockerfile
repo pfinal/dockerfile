@@ -1,4 +1,4 @@
-# docker build -t 190196539/ubuntu:16.04 .
+# docker build -t pfinal/ubuntu:16.04 . && docker push pfinal/ubuntu:16.04
 
 FROM ubuntu:16.04
 

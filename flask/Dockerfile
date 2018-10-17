@@ -1,4 +1,4 @@
-# docker build -t 190196539/flask .
+# docker build -t pfinal/flask .
 FROM python:3.6
 
 RUN pip install uwsgi pillow pymysql flask redis flask-sqlalchemy -i https://pypi.tuna.tsinghua.edu.cn/simple

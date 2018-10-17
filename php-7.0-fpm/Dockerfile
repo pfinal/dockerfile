@@ -1,4 +1,4 @@
-# docker build -t 190196539/php:7.0-fpm .
+# docker build -t pfinal/php:7.0-fpm . && docker push pfinal/php:7.0-fpm
 
 FROM php:7.0-fpm
 # Install modules
