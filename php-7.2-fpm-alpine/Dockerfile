@@ -21,8 +21,11 @@ RUN apk update && apk add "php7<7.3" \
     php7-pdo_mysql \
     php7-mbstring \
     php7-gettext \
+    php7-xml \
     php7-xmlreader \
     php7-xmlrpc \
+    php7-simplexml \
+    php7-xmlwriter \
     php7-zlib \
     php7-bz2 \
     php7-tokenizer \
