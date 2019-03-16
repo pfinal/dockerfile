@@ -33,6 +33,8 @@ RUN apk update && apk add "php7<7.3" \
     php7-intl \
     php7-gmp \
     php7-mysqli \
+    php7-pcntl \
+    php7-posix \
     php7-fpm \
 && rm -rf /var/cache/apk/* \
 && ln -s /usr/sbin/php-fpm7 /usr/sbin/php-fpm \
