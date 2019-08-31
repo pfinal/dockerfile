@@ -4,7 +4,7 @@ FROM ubuntu:16.04
 
 LABEL Author="ZouYiliang"
 LABEL version="1.0.0"
-LABEL description="PHP 7.2 FPM"
+LABEL description="PHP 7.0 FPM Ubuntu"
 
 
 RUN apt-get update \
@@ -18,6 +18,7 @@ RUN apt-get update \
   php7.0-mbstring \
   php7.0-zip \
   php-xml \
+  php7.0-bcmath \
 && set -ex && cd /etc/php/7.0/fpm/ \
 && echo "date.timezone = Asia/Chongqing" > conf.d/timezone.ini \
 && { \
