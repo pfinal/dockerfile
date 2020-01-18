@@ -1,3 +1,4 @@
+# docker push pfinal/php5.4-fpm
 FROM php:5.4-fpm
 # Install modules
 RUN apt-get update && apt-get install -y \
