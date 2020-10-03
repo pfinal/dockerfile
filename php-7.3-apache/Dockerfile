@@ -1,3 +1,4 @@
+# docker build -t pfinal/php7.3-apache .
 #
 # NOTE: THIS DOCKERFILE IS GENERATED VIA "update.sh"
 #

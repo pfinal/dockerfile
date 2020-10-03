@@ -1,13 +1,14 @@
-# docker build -t pfinal/php:7.0-fpm-ubuntu . && docker push pfinal/php:7.0-fpm-ubuntu
-
+# docker build -t pfinal/php:7.0-fpm-ubuntu-v2 . && docker push pfinal/php:7.0-fpm-ubuntu-v2
+# kushu prod
 FROM ubuntu:16.04
 
 LABEL Author="ZouYiliang"
-LABEL version="1.0.0"
+LABEL version="1.0.1"
 LABEL description="PHP 7.0 FPM Ubuntu"
 
-
-RUN apt-get update \
+RUN sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list \
+&& apt-get clean \
+&& apt-get update \
 && apt-get install -y curl vim-tiny unzip net-tools \
   php7.0 \
   php7.0-mysql \
@@ -19,6 +20,7 @@ RUN apt-get update \
   php7.0-zip \
   php-xml \
   php7.0-bcmath \
+  php7.0-soap \
 && set -ex && cd /etc/php/7.0/fpm/ \
 && echo "date.timezone = Asia/Chongqing" > conf.d/timezone.ini \
 && { \
